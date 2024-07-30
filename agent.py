@@ -1,4 +1,6 @@
 from langchain import OpenAI
+from langchain_openai import ChatOpenAI
+
 from langchain.agents import create_pandas_dataframe_agent
 import pandas as pd
 
@@ -23,7 +25,8 @@ def create_agent(filename: str):
     """
 
     # Create an OpenAI object.
-    llm = OpenAI(openai_api_key=API_KEY)
+    #llm = OpenAI(openai_api_key=API_KEY)
+     llm = ChatOpenAI(temperature=0, model="gpt-4-turbo", api_key=api_key)
 
     # Read the CSV file into a Pandas DataFrame.
     df = pd.read_csv(filename)
