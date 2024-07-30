@@ -5,4 +5,4 @@ langchain-experimental
 langchain-openai
 tabulate
 openai
-mathplotlib
+matplotlib==3.6.2
