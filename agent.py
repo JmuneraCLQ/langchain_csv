@@ -18,6 +18,9 @@ environ.Env.read_env()
 
 API_KEY = env("apikey")
 
+# Model selection
+# model_options = ["gpt-3.5-turbo-0125","gpt-4-turbo","gpt-4o"]
+# selected_model = st.selectbox("Select a GPT model", model_options)
 
 def csv_agent_func(file_path, user_message):
     """Run the CSV agent with the given file path and user message."""
@@ -25,6 +28,7 @@ def csv_agent_func(file_path, user_message):
         ChatOpenAI(temperature=0, model="gpt-3.5-turbo-0613", openai_api_key=API_KEY),
         file_path, 
         verbose=True,
+        allow_dangerous_code=True,
         agent_type=AgentType.OPENAI_FUNCTIONS,
     )
 
