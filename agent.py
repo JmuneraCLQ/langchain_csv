@@ -25,7 +25,7 @@ API_KEY = env("apikey")
 def csv_agent_func(file_path, user_message):
     """Run the CSV agent with the given file path and user message."""
     agent = create_csv_agent(
-        ChatOpenAI(temperature=0, model="gpt-3.5-turbo-0613", openai_api_key=API_KEY),
+        ChatOpenAI(temperature=0, model="gpt-4-turbo", openai_api_key=API_KEY),
         file_path, 
         verbose=True,
         allow_dangerous_code=True,
